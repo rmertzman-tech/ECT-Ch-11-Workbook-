@@ -1,69 +1,88 @@
-<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chapter 11 Workbook v1.0 — Public Reason / Toulmin Scan Workbook</title>
-  <style>
-    :root { --bg:#f7f6f2; --panel:#ffffff; --ink:#232323; --muted:#606775; --line:#d9ded6; --accent:#315f6f; --accent-dark:#1c4351; --accent-soft:#edf7fa; --warn:#7a4f00; --warn-bg:#fff5df; --good-bg:#eef7ec; --shadow:0 12px 28px rgba(22,35,55,0.10); --radius:18px; }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Chapter 11 Workbook v2.0 — The Adaptive Moral Commonwealth</title>
+<meta content="Accessible Chapter 11 workbook rebuilt on the finalized chapter text: Petrov and Arkhipov's real cases, the Adaptive Moral Commonwealth, the Civilizational Chiliagon, and the process trail." name="description"/>
+<style>
+    :root {
+      --bg:#f7f6f2; --panel:#ffffff; --ink:#232323; --muted:#606775; --line:#d9ded6;
+      --accent:#315f6f; --accent-dark:#1c4351; --accent-soft:#edf7fa;
+      --danger:#9c2d23; --good-bg:#eef7ec; --shadow:0 12px 28px rgba(22,35,55,0.10); --radius:18px;
+    }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:linear-gradient(180deg,#f7f6f2 0%,#e8f0f3 100%); line-height:1.55; }
-    header { background:radial-gradient(circle at top left,#fffdf7,#eff9fb 58%,#d9e8ee 100%); border-bottom-color:#c3d4db; border-bottom-style:solid; border-bottom-width:1px; padding:28px 18px; }
+    body { margin:0; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:linear-gradient(180deg,#f7f6f2 0%,#e8f0f3 100%); line-height:1.55; }
+    header { background:radial-gradient(circle at top left,#fffdf7,#eff9fb 58%,#d9e8ee 100%); border-bottom:1px solid #c3d4db; padding:28px 18px; }
     .wrap { max-width:1120px; margin:0 auto; }
-    .hero { display:grid; grid-template-columns:1.6fr .9fr; gap:20px; align-items:stretch; }
-    .hero-card,.side-card,section { background:rgba(255,255,255,.96); border-color:var(--line); border-style:solid; border-width:1px; border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero { display:grid; grid-template-columns:1.6fr 0.9fr; gap:20px; align-items:stretch; }
+    .hero-card, .side-card, section { background:rgba(255,255,255,0.96); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
     .hero-card { padding:26px; } .side-card { padding:20px; }
-    .eyebrow { font-weight:800; color:var(--accent-dark); text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; font-weight:800; color:var(--accent-dark); }
     h1 { margin:.2rem 0 .45rem; font-size:clamp(2rem,4vw,3.2rem); line-height:1.05; }
     h2 { margin:.2rem 0 .7rem; color:#1f2632; }
+    h3 { color:var(--accent-dark); margin-bottom:8px; }
+    p { margin-top:0; }
     .tagline { font-size:1.15rem; color:var(--muted); max-width:74ch; }
     .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-    .pill { background:#fff; border-color:#c9d8df; border-style:solid; border-width:1px; border-radius:999px; padding:7px 10px; font-weight:700; color:var(--accent-dark); }
+    .pill { background:#fff; border:1px solid #c9d8df; border-radius:999px; padding:7px 10px; font-weight:700; color:var(--accent-dark); }
     .grid { display:grid; grid-template-columns:280px 1fr; gap:20px; padding:22px 18px; align-items:start; }
     nav { position:sticky; top:12px; }
-    .progress-box { background:#fff; border-color:var(--line); border-style:solid; border-width:1px; border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; }
+    .progress-box { background:#fff; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; }
     .bar { height:12px; background:#e7edf1; border-radius:999px; overflow:hidden; margin:10px 0; }
-    #barFill { height:100%; width:0%; background:var(--accent); transition-property:width; transition-duration:.2s; transition-timing-function:ease; }
-    .toc { padding-left:20px; } .toc a { color:var(--accent-dark); text-decoration:none; font-weight:650; }
+    #barFill { height:100%; width:0%; background:var(--accent); transition:width .2s ease; }
+    .toc { padding-left:20px; }
+    .toc a { color:var(--accent-dark); text-decoration:none; font-weight:650; }
     main section { padding:22px; margin-bottom:20px; }
     .section-kicker { color:var(--accent-dark); font-weight:900; text-transform:uppercase; letter-spacing:.06em; font-size:.78rem; margin-bottom:6px; }
-    .callout { background:var(--accent-soft); border-left-color:var(--accent); border-left-style:solid; border-left-width:5px; padding:14px 16px; border-radius:12px; margin:14px 0; }
-    .warning { background:var(--warn-bg); border-left-color:var(--warn); border-left-style:solid; border-left-width:5px; padding:14px 16px; border-radius:12px; margin:14px 0; }
-    .success { background:var(--good-bg); border-left-color:#4d7e46; border-left-style:solid; border-left-width:5px; padding:14px 16px; border-radius:12px; margin:14px 0; }
-    .casebox { background:#f9fbfe; border-color:#cfddea; border-style:solid; border-width:1px; border-radius:14px; padding:16px; margin:12px 0; }
-    .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .callout, .warning, .success, .casebox, .stop-box { border-style:solid; border-width:1px; border-radius:14px; padding:16px; margin:14px 0; }
+    .callout { background:var(--accent-soft); border-left:5px solid var(--accent); border-color:var(--line); }
+    .warning { background:#fff5df; border-left:5px solid #7a4f00; border-color:#e9d6a6; }
+    .success { background:var(--good-bg); border-left:5px solid #4d7e46; border-color:#c9e0c4; }
+    .casebox { background:#f9fbfe; border-color:#cfddea; }
+    .stop-box { background:#fff0ee; border:2px solid var(--danger); }
+    .stop-box strong.stop-label { color:var(--danger); text-transform:uppercase; letter-spacing:.04em; font-size:.85rem; }
     label { display:block; font-weight:800; margin:14px 0 6px; color:#273142; }
     .hint { color:var(--muted); font-size:.92rem; margin-top:-3px; }
-    input[type="text"],select,textarea { width:100%; font:inherit; color:var(--ink); background:#fff; border-color:#bfcbd8; border-style:solid; border-width:1px; border-radius:12px; padding:11px 12px; }
-    textarea { min-height:104px; resize:vertical; } textarea.output { min-height:360px; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace; white-space:pre; }
-    input:focus,select:focus,textarea:focus,button:focus { outline-color:#315f6f; outline-style:solid; outline-width:3px; outline-offset:2px; }
-    .required-mark { color:#9c2d23; font-weight:900; }
-    .checkline { display:flex; gap:10px; align-items:flex-start; margin-top:10px; }
-    .checkline label { margin:0; font-weight:650; }
-    button { appearance:none; border-width:0; border-radius:999px; background:var(--accent); color:#fff; font-weight:800; padding:11px 16px; cursor:pointer; }
-    button.secondary { background:#e9eef5; color:var(--accent-dark); border-color:#b8c6d6; border-style:solid; border-width:1px; }
-    button:hover { filter:brightness(.96); } .buttons { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
-    .alert { display:none; padding:12px 14px; border-radius:12px; margin:12px 0; font-weight:750; } .alert.show { display:block; } .alert.err { background:#ffe9e5; color:#7b1f15; } .alert.ok { background:#eaf7e8; color:#245722; }
-    table { width:100%; border-collapse:collapse; margin:12px 0; } th,td { border-color:#d7dee8; border-style:solid; border-width:1px; padding:10px; text-align:left; vertical-align:top; } th { background:#eef8fa; }
-    footer { padding:28px 18px 40px; color:var(--muted); text-align:center; }
-    @media (max-width:850px){ .hero,.grid,.two{grid-template-columns:1fr;} nav{position:relative; top:auto;} }
+    textarea, select { width:100%; font:inherit; color:var(--ink); background:#fff; border:1px solid #bfcbd8; border-radius:12px; padding:11px 12px; }
+    textarea { min-height:104px; resize:vertical; }
+    textarea:focus, select:focus, button:focus { outline:3px solid #315f6f; outline-offset:2px; }
+    textarea[aria-invalid="true"], select[aria-invalid="true"] { border-color:var(--danger); background:#fff5f4; }
+    .checkline { display:flex; gap:10px; align-items:flex-start; margin:12px 0; padding:12px; background:#f6fbff; border:1px solid #c9d8df; border-radius:12px; }
+    .checkline input { margin-top:5px; }
+    .zero-credit { display:block; margin-top:4px; color:var(--muted); font-weight:500; font-size:.88rem; }
+    .buttons { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    button { border:1px solid var(--accent-dark); border-radius:999px; background:var(--accent); color:#fff; padding:10px 14px; font:inherit; font-weight:800; cursor:pointer; }
+    button.secondary { background:#fff; color:var(--accent-dark); }
+    button.danger { background:var(--danger); border-color:#7b1f15; }
+    button:hover { filter:brightness(0.97); }
+    .small { font-size:.9rem; color:var(--muted); }
+    .error-inline { display:none; margin-top:6px; color:var(--danger); font-weight:700; font-size:.92rem; }
+    .error-summary { display:none; background:#fff5f3; border:2px solid var(--danger); border-radius:14px; padding:14px 16px; margin:14px 0; }
+    .error-summary h3 { color:var(--danger); margin-bottom:6px; }
+    #outputText { min-height:340px; font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9rem; }
+    footer { padding:24px 18px 40px; color:var(--muted); text-align:center; }
+    @media (max-width:860px) { .hero,.grid { grid-template-columns:1fr; } nav { position:static; } }
   </style>
 </head>
 <body>
 <header>
   <div class="wrap hero">
     <div class="hero-card">
-      <div class="eyebrow">Ethics and Critical Thinking · Chapter 11</div>
-      <h1>Chapter 11 Workbook v1.0 — Public Reason / Toulmin Scan Workbook</h1>
-      <p class="tagline">Use the Public Reason / Toulmin Scan to analyze disagreement, distinguish evidence from warrant, and name a shared task for repair.</p>
-      <div class="pill-row"><span class="pill">Case: Phones in School</span><span class="pill">Share the world</span><span class="pill">Portable classroom version</span></div>
+      <div class="eyebrow">Chapter 11 Workbook · The Adaptive Moral Commonwealth · v2.0</div>
+      <h1>The Adaptive Moral Commonwealth</h1>
+      <p class="tagline"><strong>Petrov and Arkhipov's real cases</strong>, visible stability and hidden fragility, and the Civilizational Chiliagon — with a genuine process trail.</p>
+      <div class="pill-row">
+        <span class="pill">Stanislav Petrov, 1983</span>
+        <span class="pill">Vasili Arkhipov, 1962</span>
+        <span class="pill">The Civilizational Chiliagon</span>
+      </div>
     </div>
     <aside class="side-card">
-      <h2>Chapter skill</h2>
-      <p><strong>Ethics skill:</strong> give reasons that others can examine in shared life.</p>
-      <p><strong>Critical-thinking skill:</strong> separate claim, evidence, warrant, rebuttal, and qualifier.</p>
-      <p><strong>Estimated time:</strong> 25–35 minutes.</p>
+      <h2>What this workbook does</h2>
+      <p><strong>Ethics skill:</strong> Test everything this course has built under the least time it will ever ask you to imagine.</p>
+      <p><strong>Output:</strong> A Chapter 11 Workbook Output Card.</p>
+      <p class="small">Estimated time: 30–40 minutes.</p>
     </aside>
   </div>
 </header>
@@ -72,231 +91,307 @@
     <div class="progress-box">
       <strong>Progress</strong>
       <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
-      <div id="progressText">0% complete</div>
+      <div id="progressText" class="small">0 of 11 required responses completed.</div>
       <ol class="toc">
         <li><a href="#arrive">1. Arrive</a></li>
-        <li><a href="#case">2. Read the Case</a></li>
-        <li><a href="#claims">3. Issue and Claims</a></li>
-        <li><a href="#evidence">4. Evidence and Warrants</a></li>
-        <li><a href="#limits">5. Rebuttal and Qualifier</a></li>
-        <li><a href="#shared">6. Joint Task Space</a></li>
-        <li><a href="#public">7. Public Reason and Limits</a></li>
-        <li><a href="#repair">8. Public-Reason Repair</a></li>
-        <li><a href="#output">9. Output Card</a></li>
+        <li><a href="#petrov">2. Stanislav Petrov</a></li>
+        <li><a href="#arkhipov">3. Vasili Arkhipov</a></li>
+        <li><a href="#stability">4. Visible Stability, Hidden Fragility</a></li>
+        <li><a href="#amc">5. The Adaptive Moral Commonwealth</a></li>
+        <li><a href="#chiliagon">6. The Civilizational Chiliagon</a></li>
+        <li><a href="#before">7. Before You Reason It Through</a></li>
+        <li><a href="#apply">8. Apply the Capacity Check to Petrov</a></li>
+        <li><a href="#after">9. After Working Through It</a></li>
+        <li><a href="#revision">10. The Revision Check</a></li>
+        <li><a href="#output">11. Output Card</a></li>
       </ol>
-      <div class="buttons"><button type="button" class="secondary" id="clearBtn">Clear saved work</button></div>
+      <div class="buttons">
+        <button type="button" class="secondary" id="downloadWorksheet">Download worksheet</button>
+        <button type="button" class="secondary" id="saveBtn">Save now</button>
+        <button type="button" class="danger" id="clearBtn">Clear my responses</button>
+      </div>
     </div>
   </nav>
   <main>
     <section id="arrive">
-      <div class="section-kicker">1. Arrive</div>
-      <h2>Disagreement is not automatically failure.</h2>
-      <p>In Chapter 11, you learned that shared life requires ways to reason, object, revise, and repair across disagreement. This workbook helps you slow down a public disagreement and ask what reasons, evidence, limits, and shared tasks are still available.</p>
-      <div class="warning"><strong>Privacy reminder:</strong> You may use the provided case, a fictional example, a public example, a historical example, a composite example, or a low-stakes personal example. Do not disclose private, identifying, or sensitive information.</div>
-      <div class="checkline"><input type="checkbox" id="privacyAck" data-required><label for="privacyAck">I understand that I can use a non-private example and that this workbook asks for ethical analysis, not confession. <span class="required-mark">*</span></label></div>
-    </section>
-
-    <section id="case">
-      <div class="section-kicker">2. Read the Case</div>
-      <h2>Phones in School</h2>
-      <div class="casebox"><p>A school district is debating whether to limit student phone use during the school day. One group argues that phones damage attention and learning, so students need protected time away from constant distraction. Another group argues that phones support safety, family communication, translation, accessibility, organization, and learning tools. The debate becomes heated. Some people say, “Anyone against restrictions does not care about education.” Others say, “Anyone supporting restrictions wants to control students.” At first, each side sees the other as the problem.</p></div>
-      <label for="caseReaction">What stands out first in this disagreement? <span class="required-mark">*</span></label>
-      <textarea id="caseReaction" data-required></textarea>
-      <label for="sharedGoodsFirst">What goods or concerns might both sides be noticing? <span class="required-mark">*</span></label>
-      <textarea id="sharedGoodsFirst" data-required placeholder="Examples: attention, safety, learning, accessibility, family communication, student agency."></textarea>
-    </section>
-
-    <section id="claims">
-      <div class="section-kicker">3. Issue and Claims</div>
-      <h2>Name the disagreement clearly.</h2>
-      <div class="callout"><strong>Claim:</strong> what someone is trying to show or argue for. Public reason works better when the claim is stated clearly instead of hidden inside slogans.</div>
-      <label for="issue">What is the issue or public question? <span class="required-mark">*</span></label>
-      <textarea id="issue" data-required></textarea>
-      <div class="two">
-        <div><label for="claimOne">Claim 1: What does one side claim? <span class="required-mark">*</span></label><textarea id="claimOne" data-required></textarea></div>
-        <div><label for="claimTwo">Claim 2: What does another side claim? <span class="required-mark">*</span></label><textarea id="claimTwo" data-required></textarea></div>
+      <div class="section-kicker">1 · Arrive</div>
+      <h2>The alarm at 3 AM</h2>
+      <p>A system built to demand instant trust — a smoke alarm, a nuclear early-warning system — makes hesitation feel unbearable, because the cost of hesitating during a real emergency is so much worse than a false alarm. This chapter is about the handful of real people who paused anyway.</p>
+      <div class="warning"><strong>Privacy:</strong> Section 7 asks about a real moment when a system pushed you toward instant action. Use a real one if comfortable, or keep it general.</div>
+      <div class="checkline">
+        <input type="checkbox" id="privacyAck" data-required="true" aria-describedby="privacyAck_error">
+        <label for="privacyAck">I understand this workbook is for practicing the chapter's skills, not for disclosing private information.</label>
       </div>
+      <p class="error-inline" id="privacyAck_error">Please check this box before continuing.</p>
     </section>
 
-    <section id="evidence">
-      <div class="section-kicker">4. Evidence and Warrants</div>
-      <h2>Separate support from the reasoning bridge.</h2>
-      <div class="callout"><strong>Evidence</strong> is the support offered for a claim. <strong>Warrant</strong> is the reasoning bridge that connects the evidence to the claim.</div>
-      <div class="two">
-        <div><label for="evidenceOne">Evidence for Claim 1 <span class="required-mark">*</span></label><textarea id="evidenceOne" data-required></textarea></div>
-        <div><label for="warrantOne">Warrant for Claim 1 <span class="required-mark">*</span></label><textarea id="warrantOne" data-required></textarea></div>
+    <section id="petrov">
+      <div class="section-kicker">2 · Stanislav Petrov</div>
+      <h2>September 26, 1983</h2>
+      <div class="casebox">
+        <p>Petrov, a Soviet lieutenant colonel on duty at a nuclear early-warning center, watched the system report five incoming American missiles. He judged the pattern looked more like a technical malfunction than a real attack, and reported it as a false alarm. He was right — sunlight reflecting off high-altitude clouds had confused the satellite. For decades, almost no one outside a small circle knew how close the world had come.</p>
       </div>
-      <div class="two">
-        <div><label for="evidenceTwo">Evidence for Claim 2 <span class="required-mark">*</span></label><textarea id="evidenceTwo" data-required></textarea></div>
-        <div><label for="warrantTwo">Warrant for Claim 2 <span class="required-mark">*</span></label><textarea id="warrantTwo" data-required></textarea></div>
+      <label for="petrov_read">Prompt 2.1 — What made Petrov's judgment possible?</label>
+      <p class="hint">He was working from an incomplete, possibly wrong picture, under enormous pressure to trust the system completely. What let him pause anyway?</p>
+      <textarea id="petrov_read" data-required="true" aria-describedby="petrov_read_error"></textarea>
+      <p class="error-inline" id="petrov_read_error">This still needs a response.</p>
+    </section>
+
+    <section id="arkhipov">
+      <div class="section-kicker">3 · Vasili Arkhipov</div>
+      <h2>October 27, 1962</h2>
+      <div class="casebox">
+        <p>During the Cuban Missile Crisis, the Soviet submarine B-59 was cut off from Moscow and being depth-charged by American forces. The crew believed war might already be underway. Launching the submarine's nuclear torpedo required agreement from three senior officers. Two agreed. Arkhipov, the third, refused.</p>
       </div>
+      <label for="arkhipov_read">Prompt 3.1 — Why was Arkhipov's situation harder than Petrov's?</label>
+      <p class="hint">Arkhipov had even less information than Petrov, and his refusal ran directly against his own fellow officers in the room. What does that add to the case?</p>
+      <textarea id="arkhipov_read" data-required="true" aria-describedby="arkhipov_read_error"></textarea>
+      <p class="error-inline" id="arkhipov_read_error">This still needs a response.</p>
     </section>
 
-    <section id="limits">
-      <div class="section-kicker">5. Rebuttal and Qualifier</div>
-      <h2>Make the claim more responsible.</h2>
-      <div class="callout"><strong>Rebuttal:</strong> a serious objection, exception, or limit. <strong>Qualifier:</strong> language that limits the strength, scope, or conditions of a claim.</div>
-      <label for="rebuttal">What serious objection, exception, or limit must be considered? <span class="required-mark">*</span></label>
-      <textarea id="rebuttal" data-required></textarea>
-      <label for="qualifier">How should one claim be qualified so it becomes more responsible? <span class="required-mark">*</span></label>
-      <textarea id="qualifier" data-required placeholder="Example: Limit phones during instruction, with exceptions for safety, accessibility, translation, and learning needs."></textarea>
-      <label for="strongerSide">At this point, which side seems better supported? <span class="required-mark">*</span></label>
-      <select id="strongerSide" data-required>
-        <option value="">Choose one</option>
-        <option>Claim 1 seems better supported</option>
-        <option>Claim 2 seems better supported</option>
-        <option>Both notice something real, but more evidence is needed</option>
-        <option>Unsure</option>
-      </select>
+    <section id="stability">
+      <div class="section-kicker">4 · Visible Stability, Hidden Fragility</div>
+      <h2>Decades of stability was not evidence the system was safe</h2>
+      <div class="callout">The entire nuclear standoff looked stable for decades. What that stability was actually hiding: the system survived not because its design was flawless, but because on at least two occasions, a specific person made a judgment call the system itself was not built to allow for.</div>
+      <label for="stability_apply">Prompt 4.1 — Apply this to an institution you know</label>
+      <p class="hint">Identify an institution or system you're part of that looks stable from the outside. What is one piece of evidence its stability might be hiding something rather than reflecting genuine health?</p>
+      <textarea id="stability_apply" data-required="true" aria-describedby="stability_apply_error"></textarea>
+      <p class="error-inline" id="stability_apply_error">This still needs a response.</p>
     </section>
 
-    <section id="shared">
-      <div class="section-kicker">6. Joint Task Space</div>
-      <h2>Find the shared problem area.</h2>
-      <div class="callout"><strong>Joint task space:</strong> a shared problem area where people can still work together even if they disagree.</div>
-      <label for="jointTask">What shared task remains possible? <span class="required-mark">*</span></label>
-      <textarea id="jointTask" data-required></textarea>
-      <label for="bothProtect">What goods or values should the shared task try to protect? <span class="required-mark">*</span></label>
-      <textarea id="bothProtect" data-required></textarea>
+    <section id="amc">
+      <div class="section-kicker">5 · The Adaptive Moral Commonwealth</div>
+      <h2>Named, at last</h2>
+      <div class="callout">The direction a group, institution, or civilization moves in when it has genuinely learned to coordinate across genuine disagreement — not by requiring shared values, but by building the conditions under which people who disagree about almost everything can still detect danger, repair mistakes, and preserve each other's capacity to keep contributing.</div>
+      <label for="amc_apply">Prompt 5.1 — Petrov and Arkhipov, in miniature</label>
+      <p class="hint">Why are Petrov and Arkhipov exactly what an Adaptive Moral Commonwealth actually depends on — not a perfect system, but what?</p>
+      <textarea id="amc_apply" data-required="true" aria-describedby="amc_apply_error"></textarea>
+      <p class="error-inline" id="amc_apply_error">This still needs a response.</p>
     </section>
 
-    <section id="public">
-      <div class="section-kicker">7. Public Reason and Limits</div>
-      <h2>Protect justice, not shallow harmony.</h2>
-      <div class="warning"><strong>Important:</strong> Public reason does not mean every opinion is equally supported. It does not mean harmful claims deserve unlimited platform. It does not mean politeness is more important than justice.</div>
-      <label for="publicReasonImproves">How could the public argument become more reason-giving and less slogan-driven? <span class="required-mark">*</span></label>
-      <textarea id="publicReasonImproves" data-required></textarea>
-      <label for="cannotConclude">What still cannot be concluded from the information available? <span class="required-mark">*</span></label>
-      <textarea id="cannotConclude" data-required></textarea>
-      <label for="dignityLimit">What dignity, fairness, or safety limit should not be sacrificed just to make everyone sound calm? <span class="required-mark">*</span></label>
-      <textarea id="dignityLimit" data-required></textarea>
+    <section id="chiliagon">
+      <div class="section-kicker">6 · The Civilizational Chiliagon</div>
+      <h2>Harder than the original</h2>
+      <p>A chiliagon, however large, is one static object with no mind of its own. Civilizational cooperation is an uncountable number of independent agents, each capable of changing their own mind for reasons no outside observer could fully predict.</p>
+      <label for="chiliagon_apply">Prompt 6.1 — Why is this a different, harder problem?</label>
+      <p class="hint">Not just a bigger version of the chiliagon — why is it a genuinely different kind of problem?</p>
+      <textarea id="chiliagon_apply" data-required="true" aria-describedby="chiliagon_apply_error"></textarea>
+      <p class="error-inline" id="chiliagon_apply_error">This still needs a response.</p>
     </section>
 
-    <section id="repair">
-      <div class="section-kicker">8. Public-Reason Repair</div>
-      <h2>Turn disagreement toward repair.</h2>
-      <label for="evidenceNeeded">What evidence or input should be gathered before finalizing the policy? <span class="required-mark">*</span></label>
-      <textarea id="evidenceNeeded" data-required></textarea>
-      <label for="repairProposal">What public-reason repair would improve the argument or policy? <span class="required-mark">*</span></label>
-      <textarea id="repairProposal" data-required></textarea>
-      <label for="reviewStep">How could the policy be tested, reviewed, or revised after implementation? <span class="required-mark">*</span></label>
-      <textarea id="reviewStep" data-required></textarea>
+    <section id="before">
+      <div class="section-kicker">7 · Before You Reason It Through</div>
+      <h2>A moment a system pushed you toward instant action</h2>
+      <div class="stop-box">
+        <p><strong class="stop-label">Stop — write before continuing</strong></p>
+        <p>Recall a real moment in your own life where a system, a rule, or an authority pushed you toward instant action, and you paused anyway to check. Write your honest first sense of what that pause cost you. Once you move on, don't come back and revise this.</p>
+      </div>
+      <label for="own_pause_first">Prompt 7.1 — Your moment and first reaction</label>
+      <textarea id="own_pause_first" data-required="true" aria-describedby="own_pause_first_error"></textarea>
+      <p class="error-inline" id="own_pause_first_error">This still needs a response.</p>
+    </section>
+
+    <section id="apply">
+      <div class="section-kicker">8 · Apply the Capacity Check to Petrov</div>
+      <h2>All things considered, given his actual state</h2>
+      <label for="apply_capacity">Prompt 8.1 — Reconstruct Petrov's Capacity Check</label>
+      <p class="hint">Applying the deepened Capacity Check from Chapter 7 as best you can reconstruct it: what would "all things considered, given my actual state right now" have looked like for a person in Petrov's exact position?</p>
+      <textarea id="apply_capacity" data-required="true" aria-describedby="apply_capacity_error"></textarea>
+      <p class="error-inline" id="apply_capacity_error">This still needs a response.</p>
+    </section>
+
+    <section id="after">
+      <div class="section-kicker">9 · After Working Through It</div>
+      <h2>Your final answer</h2>
+      <div class="stop-box">
+        <p><strong class="stop-label">Stop — write before continuing</strong></p>
+        <p>Having thought through Petrov's and Arkhipov's cases, was your own pause worth it? Was it, in the end, the right call?</p>
+      </div>
+      <label for="own_pause_final">Prompt 9.1 — Your final answer</label>
+      <textarea id="own_pause_final" data-required="true" aria-describedby="own_pause_final_error"></textarea>
+      <p class="error-inline" id="own_pause_final_error">This still needs a response.</p>
+    </section>
+
+    <section id="revision">
+      <div class="section-kicker">10 · The Revision Check</div>
+      <h2>What actually changed?</h2>
+      <label for="revision_check">Prompt 10.1 — Compare your first reaction to your final answer</label>
+      <p class="hint">Name one specific, concrete thing that changed. If nothing changed, say so honestly and explain why your first reaction already held up.</p>
+      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error"></textarea>
+      <p class="error-inline" id="revision_check_error">This still needs a response.</p>
+      <div class="checkline">
+        <input type="checkbox" id="journalRef">
+        <div><label for="journalRef">Optional: I explored this further in my Personal Ethics Journal.</label>
+        <span class="zero-credit">No description needed. This box is never worth points, in either direction.</span></div>
+      </div>
     </section>
 
     <section id="output">
-      <div class="section-kicker">9. Output Card</div>
-      <h2>Generate your Chapter 11 Workbook Output Card.</h2>
-      <p>Your instructor may ask you to paste this Output Card into Canvas or use it for follow-up reflection.</p>
-      <label for="studentName">Optional name or initials</label>
-      <input type="text" id="studentName" placeholder="Optional">
-      <div class="buttons"><button type="button" id="generateBtn">Generate Output Card</button><button type="button" class="secondary" id="copyBtn">Copy Output Card</button><button type="button" class="secondary" id="downloadBtn">Download Output Card</button><button type="button" class="secondary" id="worksheetBtn">Download Blank Worksheet</button></div>
-      <div id="alert" class="alert" role="status" aria-live="polite"></div>
-      <textarea id="outputCard" class="output" readonly placeholder="Your output card will appear here."></textarea>
-      <div class="success"><strong>Complete:</strong> You practiced sharing the world by identifying claims, evidence, warrants, limits, a joint task, and a public-reason repair route.</div>
+      <div class="section-kicker">11 · Output Card</div>
+      <h2>Chapter 11 Workbook Output Card</h2>
+      <div class="error-summary" id="errorSummary" tabindex="-1">
+        <h3>Please complete these items before creating the Output Card</h3>
+        <ul id="errorList"></ul>
+      </div>
+      <div class="buttons">
+        <button type="button" id="generateBtn">Generate Output Card</button>
+        <button type="button" class="secondary" id="copyBtn">Copy Output Card</button>
+        <button type="button" class="secondary" id="downloadBtn">Download Output Card</button>
+      </div>
+      <label for="outputText">Output Card</label>
+      <textarea id="outputText" readonly></textarea>
+      <div id="completeMsg" class="success" hidden>You've completed the Chapter 11 workbook — Petrov and Arkhipov's real cases in full, the Adaptive Moral Commonwealth named, and an honest process trail through your own moment of pausing.</div>
     </section>
   </main>
 </div>
-<footer>Chapter 11 Workbook v1.0 · Portable classroom version · Local-only student work</footer>
+<footer>Chapter 11 Workbook v2.0 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
 <script>
-(function(){
+(function() {
   'use strict';
-  const storageKey = 'ebb_ch11_public_reason_toulmin_workbook_v1';
-  const required = Array.from(document.querySelectorAll('[data-required]'));
-  const inputs = Array.from(document.querySelectorAll('textarea,input,select'));
+  const STORAGE_KEY = 'ch11_workbook_v2_adaptive_moral_commonwealth';
+  const requiredFields = Array.from(document.querySelectorAll('[data-required="true"]'));
+  const allFields = Array.from(document.querySelectorAll('textarea, select, input[type="checkbox"]'));
   const barFill = document.getElementById('barFill');
   const progressText = document.getElementById('progressText');
-  const alertBox = document.getElementById('alert');
-  function valueOf(el){ return el.type === 'checkbox' ? el.checked : (el.value || '').trim(); }
-  function isFilled(el){ return el.type === 'checkbox' ? el.checked : (el.value || '').trim().length > 0; }
-  function updateProgress(){
-    const done = required.filter(isFilled).length;
-    const total = required.length;
+  const outputText = document.getElementById('outputText');
+  const completeMsg = document.getElementById('completeMsg');
+  const errorSummary = document.getElementById('errorSummary');
+  const errorList = document.getElementById('errorList');
+  const journalRef = document.getElementById('journalRef');
+
+  function isFilled(el) { if (el.type === 'checkbox') return el.checked; return (el.value || '').trim().length > 0; }
+  function valueOf(id) { const el = document.getElementById(id); if (!el) return ''; return el.type === 'checkbox' ? (el.checked ? 'Yes' : 'No') : (el.value || '').trim(); }
+  function labelFor(id) { const l = document.querySelector('label[for="'+id+'"]'); return l ? l.textContent.replace(/\s+/g,' ').trim() : id; }
+
+  function collect() {
+    const data = {};
+    allFields.forEach(el => { data[el.id] = el.type === 'checkbox' ? el.checked : el.value; });
+    data.savedAt = new Date().toISOString();
+    return data;
+  }
+  function saveDraft() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(collect())); } catch(e) { console.warn('Could not save draft', e); } }
+  function loadDraft() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      allFields.forEach(el => {
+        if (!(el.id in data)) return;
+        if (el.type === 'checkbox') el.checked = Boolean(data[el.id]);
+        else el.value = data[el.id];
+      });
+    } catch(e) { console.warn('Could not load draft', e); }
+  }
+  function updateProgress() {
+    const done = requiredFields.filter(isFilled).length;
+    const total = requiredFields.length;
     const pct = total ? Math.round((done/total)*100) : 0;
     barFill.style.width = pct + '%';
-    progressText.textContent = pct + '% complete (' + done + ' of ' + total + ' required responses)';
+    progressText.textContent = done + ' of ' + total + ' required responses completed.';
+    return { done, total };
   }
-  function save(){
-    const data = {};
-    inputs.forEach(el => { if(el.id){ data[el.id] = valueOf(el); } });
-    localStorage.setItem(storageKey, JSON.stringify(data));
-    updateProgress();
+  function clearErrors() {
+    errorList.innerHTML = ''; errorSummary.style.display = 'none';
+    requiredFields.forEach(el => { el.setAttribute('aria-invalid','false'); const e=document.getElementById(el.id+'_error'); if(e) e.style.display='none'; });
   }
-  function load(){
-    try {
-      const data = JSON.parse(localStorage.getItem(storageKey) || '{}');
-      inputs.forEach(el => {
-        if(!el.id || !(el.id in data)) return;
-        if(el.type === 'checkbox') el.checked = !!data[el.id]; else el.value = data[el.id];
+  function validate() {
+    clearErrors();
+    const missing = requiredFields.filter(el => !isFilled(el));
+    if (missing.length) {
+      missing.forEach(el => {
+        el.setAttribute('aria-invalid','true');
+        const e = document.getElementById(el.id+'_error'); if(e) e.style.display='block';
+        const li = document.createElement('li'); const a = document.createElement('a');
+        a.href = '#' + el.id; a.textContent = labelFor(el.id); li.appendChild(a); errorList.appendChild(li);
       });
-    } catch(e) {}
-    updateProgress();
+      errorSummary.style.display = 'block'; errorSummary.focus();
+      return false;
+    }
+    return true;
   }
-  function showAlert(message, ok){
-    alertBox.textContent = message;
-    alertBox.className = 'alert show ' + (ok ? 'ok' : 'err');
+  function line(label, value) { return label + '\n' + (value || '[not completed]') + '\n'; }
+  function buildOutput() {
+    return [
+      'Chapter 11 Workbook Output Card — The Adaptive Moral Commonwealth',
+      '',
+      line('Petrov — what made his judgment possible:', valueOf('petrov_read')),
+      line('Arkhipov — why his situation was harder:', valueOf('arkhipov_read')),
+      line('Visible Stability, Hidden Fragility — applied to a real institution:', valueOf('stability_apply')),
+      line('The Adaptive Moral Commonwealth — Petrov and Arkhipov in miniature:', valueOf('amc_apply')),
+      line('The Civilizational Chiliagon — why it is a different, harder problem:', valueOf('chiliagon_apply')),
+      '',
+      line('Before you reason it through — your moment and first reaction:', valueOf('own_pause_first')),
+      line('Reconstructing Petrov\u2019s Capacity Check:', valueOf('apply_capacity')),
+      line('After working through it — your final answer:', valueOf('own_pause_final')),
+      line('The Revision Check — what actually changed:', valueOf('revision_check')),
+      '',
+      'Optional Journal reference: ' + (journalRef.checked ? 'Yes' : 'No')
+    ].join('\n');
   }
-  function missingLabels(){
-    return required.filter(el => !isFilled(el)).map(el => {
-      const label = document.querySelector('label[for="' + el.id + '"]');
-      return label ? label.textContent.replace('*','').trim() : el.id;
-    });
-  }
-  function get(id){ const el = document.getElementById(id); return el ? (el.type === 'checkbox' ? (el.checked ? 'Acknowledged' : '') : el.value.trim()) : ''; }
-  function outputText(){
-    const now = new Date().toLocaleString();
-    return `Chapter 11 Workbook Output Card — Public Reason / Toulmin Scan\n` +
-`Generated: ${now}\n` +
-`Name/initials (optional): ${get('studentName') || 'Not provided'}\n\n` +
-`Case: Phones in School\n\n` +
-`1. First noticing\n${get('caseReaction')}\n\n` +
-`2. Goods or concerns both sides may be noticing\n${get('sharedGoodsFirst')}\n\n` +
-`3. Issue or public question\n${get('issue')}\n\n` +
-`4. Claim 1\n${get('claimOne')}\n\n` +
-`5. Evidence for Claim 1\n${get('evidenceOne')}\n\n` +
-`6. Warrant for Claim 1\n${get('warrantOne')}\n\n` +
-`7. Claim 2\n${get('claimTwo')}\n\n` +
-`8. Evidence for Claim 2\n${get('evidenceTwo')}\n\n` +
-`9. Warrant for Claim 2\n${get('warrantTwo')}\n\n` +
-`10. Rebuttal or limit\n${get('rebuttal')}\n\n` +
-`11. Qualifier\n${get('qualifier')}\n\n` +
-`12. Current support judgment\n${get('strongerSide')}\n\n` +
-`13. Joint task space\n${get('jointTask')}\n\n` +
-`14. Goods or values to protect\n${get('bothProtect')}\n\n` +
-`15. How public reason could improve the argument\n${get('publicReasonImproves')}\n\n` +
-`16. What still cannot be concluded\n${get('cannotConclude')}\n\n` +
-`17. Dignity, fairness, or safety limit\n${get('dignityLimit')}\n\n` +
-`18. Evidence or input needed\n${get('evidenceNeeded')}\n\n` +
-`19. Public-reason repair proposal\n${get('repairProposal')}\n\n` +
-`20. Review or revision step\n${get('reviewStep')}\n`;
-  }
-  function download(filename, text){
+  function download(filename, text) {
     const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    URL.revokeObjectURL(a.href);
-    a.remove();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
   }
+  function worksheetText() {
+    return [
+      'Chapter 11 Workbook Worksheet v2.0 — The Adaptive Moral Commonwealth',
+      '',
+      'Petrov, September 26, 1983: reported a false alarm on a nuclear early-warning system, correctly.',
+      'Arkhipov, October 27, 1962: refused to authorize a nuclear torpedo launch aboard submarine B-59.',
+      '',
+      '1. What made Petrov\u2019s judgment possible, working under enormous pressure and incomplete information?',
+      '',
+      '2. Why was Arkhipov\u2019s situation harder than Petrov\u2019s?',
+      '',
+      '3. Visible Stability, Hidden Fragility — apply to a real institution you know.',
+      '',
+      '4. The Adaptive Moral Commonwealth — why are Petrov and Arkhipov exactly what it depends on?',
+      '',
+      '5. The Civilizational Chiliagon — why is civilizational cooperation a different, harder problem than the original chiliagon?',
+      '',
+      '6. STOP — before continuing: recall a real moment a system pushed you toward instant action, and your honest first sense of what pausing cost you. Do not revise this after moving on.',
+      '',
+      '7. Reconstruct Petrov\u2019s Capacity Check — what would "all things considered" have looked like for him?',
+      '',
+      '8. STOP — after working through it: your final answer.',
+      '',
+      '9. Revision Check — what specifically changed? If nothing changed, say so honestly.',
+      '',
+      'Optional: note here if you explored this further in your Personal Ethics Journal (not graded).'
+    ].join('\n');
+  }
+  document.addEventListener('input', e => { if (allFields.includes(e.target)) { updateProgress(); saveDraft(); } });
+  document.addEventListener('change', e => { if (allFields.includes(e.target)) { updateProgress(); saveDraft(); } });
+  document.getElementById('saveBtn').addEventListener('click', () => { saveDraft(); alert('Draft saved in this browser.'); });
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    if (!confirm('Clear this saved Chapter 11 draft from this browser?')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    allFields.forEach(el => { if (el.type === 'checkbox') el.checked = false; else el.value = ''; });
+    outputText.value = ''; completeMsg.hidden = true; clearErrors(); updateProgress();
+  });
   document.getElementById('generateBtn').addEventListener('click', () => {
-    const missing = missingLabels();
-    if(missing.length){ showAlert('Please complete these required items first: ' + missing.slice(0,4).join('; ') + (missing.length>4 ? '; and ' + (missing.length-4) + ' more.' : ''), false); return; }
-    document.getElementById('outputCard').value = outputText();
-    save();
-    showAlert('Output Card generated.', true);
+    if (!validate()) return;
+    outputText.value = buildOutput();
+    completeMsg.hidden = false;
+    saveDraft();
   });
   document.getElementById('copyBtn').addEventListener('click', async () => {
-    const text = document.getElementById('outputCard').value || outputText();
-    try { await navigator.clipboard.writeText(text); showAlert('Output Card copied.', true); }
-    catch(e) { document.getElementById('outputCard').value = text; document.getElementById('outputCard').select(); showAlert('Copy was blocked. Select and copy the text manually.', false); }
+    if (!outputText.value.trim()) outputText.value = buildOutput();
+    try { await navigator.clipboard.writeText(outputText.value); alert('Output Card copied.'); }
+    catch(e) { outputText.select(); document.execCommand('copy'); alert('Output Card selected/copied.'); }
   });
-  document.getElementById('downloadBtn').addEventListener('click', () => { const text = document.getElementById('outputCard').value || outputText(); download('chapter11_public_reason_toulmin_output_card.txt', text); });
-  document.getElementById('worksheetBtn').addEventListener('click', () => { download('chapter11_public_reason_toulmin_blank_worksheet.txt', `Chapter 11 Blank Worksheet — Public Reason / Toulmin Scan\n\n1. First noticing:\n\n2. Goods or concerns both sides may be noticing:\n\n3. Issue or public question:\n\n4. Claim 1:\n\n5. Evidence for Claim 1:\n\n6. Warrant for Claim 1:\n\n7. Claim 2:\n\n8. Evidence for Claim 2:\n\n9. Warrant for Claim 2:\n\n10. Rebuttal or limit:\n\n11. Qualifier:\n\n12. Current support judgment:\n\n13. Joint task space:\n\n14. Goods or values to protect:\n\n15. How public reason could improve the argument:\n\n16. What still cannot be concluded:\n\n17. Dignity, fairness, or safety limit:\n\n18. Evidence or input needed:\n\n19. Public-reason repair proposal:\n\n20. Review or revision step:\n`); });
-  document.getElementById('clearBtn').addEventListener('click', () => { if(confirm('Clear saved Chapter 11 workbook responses on this device?')){ localStorage.removeItem(storageKey); inputs.forEach(el => { if(el.type==='checkbox') el.checked=false; else el.value=''; }); updateProgress(); showAlert('Saved work cleared on this device.', true); } });
-  inputs.forEach(el => { el.addEventListener('input', save); el.addEventListener('change', save); });
-  load();
-})();
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    if (!outputText.value.trim()) outputText.value = buildOutput();
+    download('chapter_11_output_card.txt', outputText.value);
+  });
+  document.getElementById('downloadWorksheet').addEventListener('click', () => {
+    download('chapter_11_workbook_worksheet.txt', worksheetText());
+  });
+  loadDraft();
+  updateProgress();
+}());
 </script>
 </body>
 </html>
