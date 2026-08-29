@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Chapter 11 Workbook v2.0 — The Adaptive Moral Commonwealth</title>
+<title>Chapter 11 Workbook v2.1 — The Adaptive Moral Commonwealth</title>
 <meta content="Accessible Chapter 11 workbook rebuilt on the finalized chapter text: Petrov and Arkhipov's real cases, the Adaptive Moral Commonwealth, the Civilizational Chiliagon, and the process trail." name="description"/>
 <style>
     :root {
@@ -44,6 +44,8 @@
     .stop-box strong.stop-label { color:var(--danger); text-transform:uppercase; letter-spacing:.04em; font-size:.85rem; }
     label { display:block; font-weight:800; margin:14px 0 6px; color:#273142; }
     .hint { color:var(--muted); font-size:.92rem; margin-top:-3px; }
+    .response-hint { margin:8px 0 0; padding:10px 12px; background:#eaf5f8; border:1px solid #bfdbe3; border-left:4px solid var(--accent-dark); border-radius:10px; font-size:.9rem; color:#1f3d47; }
+    .response-hint strong { color:var(--accent-dark); }
     textarea, select { width:100%; font:inherit; color:var(--ink); background:#fff; border:1px solid #bfcbd8; border-radius:12px; padding:11px 12px; }
     textarea { min-height:104px; resize:vertical; }
     textarea:focus, select:focus, button:focus { outline:3px solid #315f6f; outline-offset:2px; }
@@ -69,7 +71,7 @@
 <header>
   <div class="wrap hero">
     <div class="hero-card">
-      <div class="eyebrow">Chapter 11 Workbook · The Adaptive Moral Commonwealth · v2.0</div>
+      <div class="eyebrow">Chapter 11 Workbook · The Adaptive Moral Commonwealth · v2.1</div>
       <h1>The Adaptive Moral Commonwealth</h1>
       <p class="tagline"><strong>Petrov and Arkhipov's real cases</strong>, visible stability and hidden fragility, and the Civilizational Chiliagon — with a genuine process trail.</p>
       <div class="pill-row">
@@ -91,7 +93,7 @@
     <div class="progress-box">
       <strong>Progress</strong>
       <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
-      <div id="progressText" class="small">0 of 11 required responses completed.</div>
+      <div id="progressText" class="small">0 of 10 required responses completed.</div>
       <ol class="toc">
         <li><a href="#arrive">1. Arrive</a></li>
         <li><a href="#petrov">2. Stanislav Petrov</a></li>
@@ -123,6 +125,12 @@
         <label for="privacyAck">I understand this workbook is for practicing the chapter's skills, not for disclosing private information.</label>
       </div>
       <p class="error-inline" id="privacyAck_error">Please check this box before continuing.</p>
+      <div class="callout" aria-labelledby="guidance-heading">
+        <h3 id="guidance-heading">Before You Start Typing</h3>
+        <p>The boxes in this workbook are graded responses, not a warm-up. A thin answer restates the obvious. A full answer names something specific and traceable, not a general truth that could apply to almost anything.</p>
+        <p>For example: asked why a chess player lost a won position, a thin answer says "they made a mistake." A full answer says "with 40 seconds left on the clock, they moved instinctively to a familiar-looking pattern that actually walked into a forced mate in three, missing it purely from time pressure, not lack of skill." Both are about the same length. Only one of them could actually be checked against what happened.</p>
+        <p>Each prompt below has a short note under it naming the specific shortcut a rushed answer tends to take on that exact question. Read it before you write, not after you get your grade back.</p>
+      </div>
     </section>
 
     <section id="petrov">
@@ -133,7 +141,8 @@
       </div>
       <label for="petrov_read">Prompt 2.1 — What made Petrov's judgment possible?</label>
       <p class="hint">He was working from an incomplete, possibly wrong picture, under enormous pressure to trust the system completely. What let him pause anyway?</p>
-      <textarea id="petrov_read" data-required="true" aria-describedby="petrov_read_error"></textarea>
+      <p class="response-hint" id="petrov_read_rhint"><strong>Watch for:</strong> saying "he was brave" or "he trusted his instincts" — those are personality labels, not an explanation. A full answer names the specific piece of reasoning or knowledge that let him judge the pattern didn't match a real attack, not just that he felt confident.</p>
+      <textarea id="petrov_read" data-required="true" aria-describedby="petrov_read_error petrov_read_rhint"></textarea>
       <p class="error-inline" id="petrov_read_error">This still needs a response.</p>
     </section>
 
@@ -145,7 +154,8 @@
       </div>
       <label for="arkhipov_read">Prompt 3.1 — Why was Arkhipov's situation harder than Petrov's?</label>
       <p class="hint">Arkhipov had even less information than Petrov, and his refusal ran directly against his own fellow officers in the room. What does that add to the case?</p>
-      <textarea id="arkhipov_read" data-required="true" aria-describedby="arkhipov_read_error"></textarea>
+      <p class="response-hint" id="arkhipov_read_rhint"><strong>Watch for:</strong> restating that "more people disagreed with him" — that's the premise already given, not an answer. A full answer names what specifically became harder about the judgment itself when it required refusing two colleagues in the same room, not just reasoning alone at a console.</p>
+      <textarea id="arkhipov_read" data-required="true" aria-describedby="arkhipov_read_error arkhipov_read_rhint"></textarea>
       <p class="error-inline" id="arkhipov_read_error">This still needs a response.</p>
     </section>
 
@@ -155,7 +165,8 @@
       <div class="callout">The entire nuclear standoff looked stable for decades. What that stability was actually hiding: the system survived not because its design was flawless, but because on at least two occasions, a specific person made a judgment call the system itself was not built to allow for.</div>
       <label for="stability_apply">Prompt 4.1 — Apply this to an institution you know</label>
       <p class="hint">Identify an institution or system you're part of that looks stable from the outside. What is one piece of evidence its stability might be hiding something rather than reflecting genuine health?</p>
-      <textarea id="stability_apply" data-required="true" aria-describedby="stability_apply_error"></textarea>
+      <p class="response-hint" id="stability_apply_rhint"><strong>Watch for:</strong> naming an institution and asserting it's fragile without naming one specific, checkable piece of evidence — a near-miss, a complaint that got buried, unusual turnover. A full answer points to something concrete you could actually describe to someone else, not just a general feeling that something's off.</p>
+      <textarea id="stability_apply" data-required="true" aria-describedby="stability_apply_error stability_apply_rhint"></textarea>
       <p class="error-inline" id="stability_apply_error">This still needs a response.</p>
     </section>
 
@@ -165,7 +176,8 @@
       <div class="callout">The direction a group, institution, or civilization moves in when it has genuinely learned to coordinate across genuine disagreement — not by requiring shared values, but by building the conditions under which people who disagree about almost everything can still detect danger, repair mistakes, and preserve each other's capacity to keep contributing.</div>
       <label for="amc_apply">Prompt 5.1 — Petrov and Arkhipov, in miniature</label>
       <p class="hint">Why are Petrov and Arkhipov exactly what an Adaptive Moral Commonwealth actually depends on — not a perfect system, but what?</p>
-      <textarea id="amc_apply" data-required="true" aria-describedby="amc_apply_error"></textarea>
+      <p class="response-hint" id="amc_apply_rhint"><strong>Watch for:</strong> calling them "heroes" — that's praise, not an answer to what the Adaptive Moral Commonwealth structurally depends on. A full answer names the specific thing their actions supplied that the system's own design couldn't: what a perfect system cannot build in on its own.</p>
+      <textarea id="amc_apply" data-required="true" aria-describedby="amc_apply_error amc_apply_rhint"></textarea>
       <p class="error-inline" id="amc_apply_error">This still needs a response.</p>
     </section>
 
@@ -175,7 +187,8 @@
       <p>A chiliagon, however large, is one static object with no mind of its own. Civilizational cooperation is an uncountable number of independent agents, each capable of changing their own mind for reasons no outside observer could fully predict.</p>
       <label for="chiliagon_apply">Prompt 6.1 — Why is this a different, harder problem?</label>
       <p class="hint">Not just a bigger version of the chiliagon — why is it a genuinely different kind of problem?</p>
-      <textarea id="chiliagon_apply" data-required="true" aria-describedby="chiliagon_apply_error"></textarea>
+      <p class="response-hint" id="chiliagon_apply_rhint"><strong>Watch for:</strong> answering "because there are more people" or "it's bigger" — the passage already tells you scale isn't the point. A full answer explains what changes when the objects involved can independently think and change their minds, not just increase in number.</p>
+      <textarea id="chiliagon_apply" data-required="true" aria-describedby="chiliagon_apply_error chiliagon_apply_rhint"></textarea>
       <p class="error-inline" id="chiliagon_apply_error">This still needs a response.</p>
     </section>
 
@@ -187,7 +200,8 @@
         <p>Recall a real moment in your own life where a system, a rule, or an authority pushed you toward instant action, and you paused anyway to check. Write your honest first sense of what that pause cost you. Once you move on, don't come back and revise this.</p>
       </div>
       <label for="own_pause_first">Prompt 7.1 — Your moment and first reaction</label>
-      <textarea id="own_pause_first" data-required="true" aria-describedby="own_pause_first_error"></textarea>
+      <p class="response-hint" id="own_pause_first_rhint"><strong>Watch for:</strong> describing the moment itself without naming what the pause actually cost you — time, someone's trust, your own standing in that moment. The prompt specifically asks for the cost, not just the story. And if you've already justified whether the pause was worth it, that's not a first reaction.</p>
+      <textarea id="own_pause_first" data-required="true" aria-describedby="own_pause_first_error own_pause_first_rhint"></textarea>
       <p class="error-inline" id="own_pause_first_error">This still needs a response.</p>
     </section>
 
@@ -196,7 +210,8 @@
       <h2>All things considered, given his actual state</h2>
       <label for="apply_capacity">Prompt 8.1 — Reconstruct Petrov's Capacity Check</label>
       <p class="hint">Applying the deepened Capacity Check from Chapter 7 as best you can reconstruct it: what would "all things considered, given my actual state right now" have looked like for a person in Petrov's exact position?</p>
-      <textarea id="apply_capacity" data-required="true" aria-describedby="apply_capacity_error"></textarea>
+      <p class="response-hint" id="apply_capacity_rhint"><strong>Watch for:</strong> describing how Petrov must have felt — "he was probably terrified" — instead of reconstructing the actual check. A full answer names what specific factors, such as his training, his fatigue, or the time pressure, the Capacity Check would have had to weigh against each other.</p>
+      <textarea id="apply_capacity" data-required="true" aria-describedby="apply_capacity_error apply_capacity_rhint"></textarea>
       <p class="error-inline" id="apply_capacity_error">This still needs a response.</p>
     </section>
 
@@ -208,7 +223,8 @@
         <p>Having thought through Petrov's and Arkhipov's cases, was your own pause worth it? Was it, in the end, the right call?</p>
       </div>
       <label for="own_pause_final">Prompt 9.1 — Your final answer</label>
-      <textarea id="own_pause_final" data-required="true" aria-describedby="own_pause_final_error"></textarea>
+      <p class="response-hint" id="own_pause_final_rhint"><strong>Watch for:</strong> a bare yes or no, or restating your Section 7 account with more conviction. A full answer says specifically what thinking through Petrov's and Arkhipov's cases changed or confirmed about how you judge your own pause now.</p>
+      <textarea id="own_pause_final" data-required="true" aria-describedby="own_pause_final_error own_pause_final_rhint"></textarea>
       <p class="error-inline" id="own_pause_final_error">This still needs a response.</p>
     </section>
 
@@ -217,7 +233,8 @@
       <h2>What actually changed?</h2>
       <label for="revision_check">Prompt 10.1 — Compare your first reaction to your final answer</label>
       <p class="hint">Name one specific, concrete thing that changed. If nothing changed, say so honestly and explain why your first reaction already held up.</p>
-      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error"></textarea>
+      <p class="response-hint" id="revision_check_rhint"><strong>Watch for:</strong> writing "nothing changed" and stopping there. That's an allowed outcome, but only when you explain specifically why your first reaction survived being tested against Petrov and Arkhipov's cases, not just assert that it did.</p>
+      <textarea id="revision_check" data-required="true" aria-describedby="revision_check_error revision_check_rhint"></textarea>
       <p class="error-inline" id="revision_check_error">This still needs a response.</p>
       <div class="checkline">
         <input type="checkbox" id="journalRef">
@@ -244,7 +261,7 @@
     </section>
   </main>
 </div>
-<footer>Chapter 11 Workbook v2.0 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
+<footer>Chapter 11 Workbook v2.1 · Ethics and Critical Thinking · Local-only HTML, no data leaves this page.</footer>
 <script>
 (function() {
   'use strict';
@@ -336,7 +353,7 @@
   }
   function worksheetText() {
     return [
-      'Chapter 11 Workbook Worksheet v2.0 — The Adaptive Moral Commonwealth',
+      'Chapter 11 Workbook Worksheet v2.1 — The Adaptive Moral Commonwealth',
       '',
       'Petrov, September 26, 1983: reported a false alarm on a nuclear early-warning system, correctly.',
       'Arkhipov, October 27, 1962: refused to authorize a nuclear torpedo launch aboard submarine B-59.',
